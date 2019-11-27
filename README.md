@@ -4,8 +4,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, index: true|
-|name|string|null: false|
+|id|integer|null: false|
+|name|string|null: false, index: true|
 |email|string|null: false|
 |password|string|null: false|
 
