@@ -1,0 +1,25 @@
+.main_chat
+   .main_chat__header
+      .main_chat__header__title
+         %p.main_chat__header__title__title-title
+            test
+         %p.main_chat__header__title__title-member
+            Menber: masa 
+      .main_chat__header__edit
+         Edit
+   .main_chat__main
+      .main_chat__main__messege
+         .main_chat__main__messege__messege-box1
+            %p.name
+               masa  
+            %p.time
+               2019/11/29(fri) 17:43:01    
+         .main_chat__main__messege__messege-box2
+            おはよう  
+   .main_chat__footer
+      .main_chat__footer__forms
+         type a message
+         %label{class: "input-box__image", for: "message_image"}
+            = icon('fas', 'image' )
+      .main_chat__footer__send
+         send
