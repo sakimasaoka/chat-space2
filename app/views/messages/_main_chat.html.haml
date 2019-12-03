@@ -2,11 +2,14 @@
    .main_chat__header
       .main_chat__header__title
          %p.main_chat__header__title__title-title
-            test
+            = @group.name
          %p.main_chat__header__title__title-member
-            Menber: masa 
+            Menber:
+            - @group.users.each do |user|
+               #{user.name}
+
       .main_chat__header__edit
-         Edit
+         = link_to "Edit", edit_group_path(@group.id), id: 'edit'
    .main_chat__main
       .main_chat__main__messege
          = render @messages
