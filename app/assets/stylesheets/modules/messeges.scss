@@ -65,13 +65,14 @@
 
 .main_chat{
         width: calc(100vw - 300px);
-        height: 100vh;
+        
         &__header {
                 height: 100px;
                 background-color: #ffffff;
                 display:flex;
                 margin-left: 40px;
                 margin-right: 40px;
+                border-bottom: solid 1px #eee;
                 &__title {
                         margin-top: 35px;
                         &__title-title {
@@ -99,32 +100,29 @@
         &__main {
                 height: calc(100% - 190px);  
                 background-color: #fafafa;
-                border-top: solid 1px #eeeeee;
                 padding: 35px 40px 35px 40px;
-                &__messege {
-                        padding-bottom: 46px;
-                        &__messege-box1 {
-                                display: flex;
-                                margin-bottom: 10px;
-                                .name {
-                                        color: #434a54;
-                                        font-size: 16px;
-                                        font-weight: bold;
-                                }
-                                .time{
+                .messege{
+                        padding-bottom: 40px;
+                        .user-name{
+                                float: left;
+                                color: #434a54;
+                                font-size: 16px;
+                                font-weight: bold;
+                        }
+                                        .time{
                                         color: #999999;
                                         font-size: 12px;
                                         margin-left: 10px;  
-                                }
-                        }
-                        &__messege-box2{
+                                        }
+                        
+                        .content{
                                 margin-bottom: 10px;
                                 color: #434a54;
                                 font-size: 14px;
                                 margin-bottom: 10px;
                         }                        
-                        
-                }
+                } 
+        
         }
         .form {
                 background-color: #DDDDDD;
@@ -138,7 +136,7 @@
                 width: calc(100% - 150px);
                 }
                 &__mask {
-                background-color: $white;
+                background-color: white;
                 float: left;
                 height: 50px;
                 padding-right: 10px;
@@ -151,9 +149,8 @@
                 }
                 }
                 &__submit {
-                background-color: $light_blue;
-                border: none;
-                color: $white;
+                background-color: #38aef0;
+                color: white;
                 float: right;
                 font-size: 16px;
                 height: 50px;
