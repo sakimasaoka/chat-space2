@@ -11,15 +11,7 @@
       .main_chat__header__edit
          = link_to "Edit", edit_group_path(@group.id), id: 'edit'
    .main_chat__main
-      .main_chat__main__messege
-         = render @messages
-         -#.main_chat__main__messege__messege-box1
-            -#%p.name
-               -#masa  
-            -#p.time
-               -#2019/11/29(fri) 17:43:01    
-         -#.main_chat__main__messege__messege-box2
-            -#おはよう  
+      = render @messages
    .form
       = form_for [@group, @message] do |f|
          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
