@@ -1,8 +1,6 @@
 $(function(){
   function buildHTML(message){
   
-    // 「もしメッセージに画像が含まれていたら」という条件式
-    console.log(message)
     if (message.image)  {
       var html =`<div class="messege">
       <div class="user-name">
@@ -19,7 +17,7 @@ $(function(){
       
       </div>
       </div>`
-    //メッセージに画像が含まれる場合のHTMLを作る
+
 
     } else {
       var html =`<div class="messege">
@@ -37,7 +35,7 @@ $(function(){
       </div>
       </div>`
       
-      //メッセージに画像が含まれない場合のHTMLを作る
+
 
     }
     
@@ -48,8 +46,7 @@ $(function(){
 
   $('form').on('submit', function(e){
     e.preventDefault()
-    var input = new FormData(this);
-    //console.log(input)
+
 
     var url = $(this).attr('action')
     $.ajax({
