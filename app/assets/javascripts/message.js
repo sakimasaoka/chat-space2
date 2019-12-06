@@ -14,7 +14,6 @@ $(function(){
       ${message.content}
       </p>
       <img src="${message.image}" class="content">
-      
       </div>
       </div>`
 
@@ -31,15 +30,9 @@ $(function(){
       <p class="content">
       ${message.content}
       </p>
-      
       </div>
       </div>`
-      
-
-
     }
-    
-    
     return html
   }
 
