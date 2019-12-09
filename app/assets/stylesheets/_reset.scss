@@ -12,37 +12,37 @@ html{
         color:#000;
         background:#FFF;
     }
-      /*
-          TODO remove settings on BODY since we can't namespace it.
+    /*
+        TODO remove settings on BODY since we can't namespace it.
       */
-      /*
-          TODO test putting a class on HEAD.
-              - Fails on FF.
+    /*
+        TODO test putting a class on HEAD.
+            - Fails on FF.
       */
     body,
-      div,
-      dl,
-      dt,
-      dd,
-      ul,
-      ol,
-      li,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      pre,
-      code,
-      form,
-      fieldset,
-      legend,
-      input,
-      textarea,
-      p,
-      blockquote,
-      th,
+    div,
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    code,
+    form,
+    fieldset,
+    legend,
+    input,
+    textarea,
+    p,
+    blockquote,
+    th,
     td {
         margin:0;
         padding:0;
@@ -56,43 +56,43 @@ html{
         border:0;
     }
     /*
-          TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+        TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
       */
-      address,
-      caption,
-      cite,
-      code,
-      dfn,
-      em,
-      strong,
-      th,
-      var {
-          font-style:normal;
-          font-weight:normal;
-      }
+    address,
+    caption,
+    cite,
+    code,
+    dfn,
+    em,
+    strong,
+    th,
+    var {
+        font-style:normal;
+        font-weight:normal;
+    }
       
-      ol,
-      ul {
-          list-style:none;
-      }
+    ol,
+    ul {
+        list-style:none;
+    }
       
-      caption,
-      th {
-          text-align:left;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-          font-size:100%;
-          font-weight:normal;
-      }
-      q:before,
-      q:after {
-          content:'';
-      }
+    caption,
+    th {
+        text-align:left;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size:100%;
+        font-weight:normal;
+    }
+    q:before,
+    q:after {
+        content:'';
+    }
     abbr,
     acronym {
         border:0;
