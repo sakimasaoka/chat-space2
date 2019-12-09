@@ -36,10 +36,11 @@ $(function(){
   }
 
 
-  $('form').on('submit', function(e){
+  $('form__mask').on('submit', function(e){
     e.preventDefault()
       var input = new FormData(this);
       var url = $(this).attr('action')
+      if (window.location.href.match(/\/groups\/\d+\/messages/))
       $.ajax({
       url:  url,
       type: 'POST',
@@ -62,6 +63,7 @@ $(function(){
   function reloadMessages(){		
 		var last_message_id = $('.message:last').data('message_id');
     var href = 'api/messages'
+    if (window.location.href.match(/\/groups\/\d+\/messages/))
 		$.ajax({
 		url: href,
 		type: 'GET',
@@ -81,5 +83,5 @@ $(function(){
       alert('自動更新に失敗しました');
       });
       };
-      setInterval(reloadMessages, 3000);
+      setInterval(reloadMessages, 5000);
       });
