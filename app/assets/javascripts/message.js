@@ -71,15 +71,15 @@ $(function(){
 		
 		.done(function(messages){
       messages.forEach(function(message){
-		var insertHTML = buildHTML(message)
-    $('.main_chat__main').append(insertHTML)
-		});
-		$('.main_chat__main').animate({scrollTop: $('.main_chat__main')[0].scrollHeight}, 'fast');
-		})
-		
+      var insertHTML = buildHTML(message)
+      $('.main_chat__main').append(insertHTML)
+      });
+      $('.main_chat__main').animate({scrollTop: $('.main_chat__main')[0].scrollHeight}, 'fast');
+      })
+
 		.fail(function(){
-    alert('自動更新に失敗しました');
-		});
-		};
-		setInterval(reloadMessages, 3000);
-  });
+      alert('自動更新に失敗しました');
+      });
+      };
+      setInterval(reloadMessages, 3000);
+      });
