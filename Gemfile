@@ -62,7 +62,6 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'devise'
 gem 'carrierwave'
-gem 'fog-aws'
 gem 'mini_magick'
 
 group :development, :test do
@@ -77,3 +76,4 @@ group :production do
  gem 'unicorn', '5.4.1'
 end
 
+gem 'fog-aws'
