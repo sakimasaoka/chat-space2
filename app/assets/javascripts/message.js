@@ -53,7 +53,7 @@ $(function(){
         var html = buildHTML(newMessage);
         $('.main_chat__main').append(html);
         $('.new_message')[0].reset();
-        $('.main_chat__main').animate({ scrollTop: $('.main_chat__main')[0].scrollHeight});
+        $('.main_chat__main').animate({ scrollTop: $('.main_chat__main')[0].scrollHeight}, 'fast');
         $('.form__submit').prop('disabled', false);
     })
       .fail(function() {
