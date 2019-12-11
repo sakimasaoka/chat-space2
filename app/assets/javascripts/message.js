@@ -36,11 +36,14 @@ $(function(){
   }
 
 
-  $('form__mask').on('submit', function(e){
-    e.preventDefault()
+  $('form').on('submit', function(e){
+    e.preventDefault();
+    console.log('input')
+      var url = $(this).attr('action');
       var input = new FormData(this);
-      var url = $(this).attr('action')
-      if (window.location.href.match(/\/groups\/\d+\/messages/))
+      
+      
+      if (window.location.href.match(/\/groups\/\d+\/messages/));
       $.ajax({
       url:  url,
       type: 'POST',
@@ -53,8 +56,8 @@ $(function(){
         var html = buildHTML(newMessage);
         $('.main_chat__main').append(html);
         $('.new_message')[0].reset();
-        $('.form__submit').prop('disabled', false);
-        $('.main_chat__main').animate({ scrollTop: $('.message')[0].scrollHeight});
+        $('.form__submit1').prop('disabled', false);
+        $('.main_chat__main').animate({ scrollTop: $('.main_chat__main')[0].scrollHeight});
     })
       .fail(function() {
         alert("メッセージ送信に失敗しました");
@@ -63,7 +66,7 @@ $(function(){
   function reloadMessages(){		
 		var last_message_id = $('.message:last').data('message_id');
     var href = 'api/messages'
-    if (window.location.href.match(/\/groups\/\d+\/messages/))
+    if (window.location.href.match(/\/groups\/\d+\/messages/));
 		$.ajax({
 		url: href,
 		type: 'GET',
