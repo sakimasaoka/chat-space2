@@ -38,7 +38,6 @@ $(function(){
 
   $('form').on('submit', function(e){
     e.preventDefault();
-    console.log('input')
       var url = $(this).attr('action');
       var input = new FormData(this);
       
