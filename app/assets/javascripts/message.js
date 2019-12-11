@@ -35,7 +35,7 @@ $(function(){
   }
 
 
-  $('form').on('submit', function(e){
+  $('.new_message').on('submit', function(e){
     e.preventDefault();
       var url = $(this).attr('action');
       var input = new FormData(this);
