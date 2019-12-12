@@ -1,33 +1,33 @@
 $(function(){
   var buildHTML = function(message){
     if (message.image)  {
-      var html =`<div class="messege" data-message_id= "${message.id}">
-      <div class="user-name">
+      var html =`<div class="message"  "data-message_id"="${message.id}">
+      <div class="message__data">
+      <div class="message__data__user-name">
       ${message.name}
       </div>
-      <div class="time">
+      <div class="message__data__time">
       ${message.created_at}
       </div>
-      <div class="content">
-      <p class="content">
+      </div>
+      <div class="lower-message__content"> 
+      <img src="${message.image}" class="lower-message__image"><br>
       ${message.content}
-      </p>
-      <img src="${message.image}" class="content">
       </div>
       </div>`
 
     } else {
       var html =`<div class="message"  data-message_id="${message.id}">
-      <div class="user-name">
+      <div class="message__data">
+      <div class="message__data__user-name">
       ${message.name}
       </div>
-      <div class="time">
+      <div class="message__data__time">
       ${message.created_at}
       </div>
-      <div class="content">
-      <p class="content">
+      </div>
+      <div class="lower-message__content">
       ${message.content}
-      </p>
       </div>
       </div>`
     }
@@ -52,7 +52,7 @@ $(function(){
       .done(function(newMessage){
         var html = buildHTML(newMessage);
         $('.main_chat__main').append(html);
-        $('.new_message')[0].reset();
+        $('#new_message')[0].reset();
         $('.form__submit1').prop('disabled', false);
         $('.main_chat__main').animate({ scrollTop: $('.main_chat__main')[0].scrollHeight});
       })
@@ -66,6 +66,7 @@ $(function(){
 	
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
     var last_message_id = $('.message:last').data('message_id');
+    console.log(last_message_id)
     var href = 'api/messages'
       $.ajax({
 		url: href,
@@ -75,11 +76,13 @@ $(function(){
 		})
 		
 		.done(function(messages){
+      if(messages.length > 0){
       messages.forEach(function(message){
       var insertHTML = buildHTML(message)
       $('.main_chat__main').append(insertHTML)
       });
-      $('.main_chat__main').animate({scrollTop: $('.main_chat__main')[0].scrollHeight}, 'fast');
+      $('.main_chat__main').animate({scrollTop: $('.main_chat__main')[0].scrollHeight});
+    }
       })
 
 		.fail(function(){
@@ -88,6 +91,7 @@ $(function(){
   
     };
   }
-      setInterval(reloadMessages, 5000);
 
+      setInterval(reloadMessages, 5000);
+      
   });

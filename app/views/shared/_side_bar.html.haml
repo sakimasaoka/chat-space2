@@ -5,9 +5,9 @@
         = current_user.name
       .sideber__point__box__menu
         =link_to new_group_path do
-          = icon('fa', 'edit',  class:"icon")
+          = icon('fa', 'edit',  class:"icon1")
         =link_to edit_user_path(current_user) do
-          = icon('fas', 'cog',  class: "icon")
+          = icon('fas', 'cog',  class: "icon2")
   .sideber__main
     - current_user.groups.each do |group|
       .sideber__main__group
