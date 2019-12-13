@@ -1,7 +1,7 @@
 $(function(){
   var buildHTML = function(message){
     if (message.image)  {
-      var html =`<div class="message"  "data-message_id"="${message.id}">
+      var html =`<div class="message"  data-message_id="${message.id}">
       <div class="message__data">
       <div class="message__data__user-name">
       ${message.name}
@@ -11,8 +11,8 @@ $(function(){
       </div>
       </div>
       <div class="lower-message__content"> 
-      <img src="${message.image}" class="lower-message__image"><br>
-      ${message.content}
+        ${message.content}<br>
+      <img src="${message.image}" class="lower-message__image">
       </div>
       </div>`
 
@@ -66,7 +66,7 @@ $(function(){
 	
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
     var last_message_id = $('.message:last').data('message_id');
-    console.log(last_message_id)
+    //console.log(last_message_id)
     var href = 'api/messages'
       $.ajax({
 		url: href,
@@ -76,22 +76,19 @@ $(function(){
 		})
 		
 		.done(function(messages){
-      if(messages.length > 0){
       messages.forEach(function(message){
       var insertHTML = buildHTML(message)
       $('.main_chat__main').append(insertHTML)
-      });
-      $('.main_chat__main').animate({scrollTop: $('.main_chat__main')[0].scrollHeight});
-    }
+      $('#new_message')[0].reset();
+      $('.main_chat__main').animate({scrollTop: $('.main_chat__main')[0].scrollHeight}, 10);
       })
-
+    })
 		.fail(function(){
       alert('自動更新に失敗しました');
       });
   
     };
   }
-
       setInterval(reloadMessages, 5000);
       
   });
