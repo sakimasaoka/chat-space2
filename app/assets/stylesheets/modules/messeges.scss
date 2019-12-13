@@ -58,6 +58,7 @@
                         padding: 20px 20px 40px 20px;
                         height: 91px;
                         width: 300px;
+                        text-decoration: none;
                         &__text{
                                 color: #ffffff;
                                 font-size: 15px;
@@ -68,6 +69,10 @@
                                 font-size: 11px;
                                 margin-top: 5px;
                                 text-decoration: none;
+
+                        }
+                        a{
+                                text-decoration: none;    
                         }
                 }
         }
